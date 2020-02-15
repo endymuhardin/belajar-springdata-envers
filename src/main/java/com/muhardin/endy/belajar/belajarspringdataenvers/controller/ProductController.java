@@ -28,6 +28,7 @@ public class ProductController {
     @PutMapping("/api/product/{id}")
     public void updateProduct(@PathVariable("id") Product oldValue, @RequestBody @Valid Product newValue) {
         newValue.setId(oldValue.getId());
+        newValue.setCreatedTime(oldValue.getCreatedTime());
         productDao.save(newValue);
     }
 }
