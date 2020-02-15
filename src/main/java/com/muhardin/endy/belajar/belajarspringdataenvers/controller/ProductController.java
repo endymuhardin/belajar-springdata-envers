@@ -29,6 +29,7 @@ public class ProductController {
     public void updateProduct(@PathVariable("id") Product oldValue, @RequestBody @Valid Product newValue) {
         newValue.setId(oldValue.getId());
         newValue.setCreatedTime(oldValue.getCreatedTime());
+        newValue.setCreatedBy(oldValue.getCreatedBy());
         productDao.save(newValue);
     }
 }
